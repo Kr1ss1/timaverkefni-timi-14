@@ -3,12 +3,13 @@ type MenuItemProps = {
     description: string;
     price: number;
     isVegan?: boolean;
+    emoji?: string;
 };
 
-function MenuItem({ name, description, price , isVegan}: MenuItemProps) {
+function MenuItem({ name, description, price, isVegan, emoji = "☕" }: MenuItemProps) {
     return (
         <article className="menu-item">
-            <h3>{name}</h3>
+            <h3>{emoji} {name}</h3>
             <p>{description}</p>
             <p className="price">{price}kr.</p>
             <p>{isVegan && <span className="badge">Vegan</span>}</p>
